@@ -1,0 +1,191 @@
+@font-face {
+  font-family:Kunstler Script ;
+    src: url('../fonts/KUNSTLER.eot');
+  src: local("Kunstler Script"), url('../fonts/KUNSTLER.TTF');
+}
+
+
+
+body{
+      background-size:100%;
+       background-repeat: repeat;
+       overflow-x: hidden;
+
+}
+
+#title
+   {  font-family:'Kunstler Script',Verdana,Arial;
+      position: absolute;
+   	font-size: 50px;
+   	color:blue;
+    top: 200px;
+    right: 20%;
+    z-index: 3;
+   }
+
+
+a:link {color: blue; text-decoration: underline;}
+a:visited {color: blue; text-decoration: none;}
+a:focus {color:blue; text-decoration: none;}
+a:hover {color: black; text-decoration: none;}
+a:active {color: green; text-decoration: none;}
+
+
+
+
+
+
+
+
+
+.backcolor{position: absolute;
+           top: 5px;
+           left: 5px;
+           background-color: #ADD8F6;
+           width: 1400px;
+           height: 1000px;
+           z-index:1;
+           opacity:0.1;filter: alpha(opacity=10);
+
+
+
+}
+
+.text1{ position: absolute;
+	        top: 50px;
+	        left: 60px;
+           background-color: #ffeb3b;
+           width: 300px;
+           height: 350px;
+
+
+           border-color : #ADD8F6;
+         border-left-style: solid;
+	border-right-style: solid;
+         z-index:1;
+         opacity:0.45;filter: alpha(opacity=45);
+
+                            }
+
+.text1 p {font-size: 15px;
+               color: blue;
+           font-family:Verdana,Arial;
+           margin-top:5px;
+           margin-left:10px;
+           z-index: 6;
+
+                                  }
+
+.text2 p{font-size: 15px;
+               color: blue;
+           font-family:Verdana,Arial;
+           margin-top:10px;
+           margin-left:10px;
+           z-index: 6;
+                                    }
+
+.text2{ position: absolute;
+	        top: 200px;
+	        left: 170px;
+           background-color: #ffeb3b;
+           width: 400px;
+           height: 350px;
+
+
+           border-color : yellow;
+         border-left-style: solid;
+	border-right-style: solid;
+         z-index:6;
+         opacity:0.5;filter: alpha(opacity=50);
+                                 }
+
+
+
+.text3 {
+background-color:  #ffeb3b;
+    font-size:15px;
+    position: absolute;
+    top: 150px;
+    right : 0%;
+     height:25%;
+      width:60%;
+   z-index:1;
+    opacity:0.6; filter: alpha(opacity=60);}
+
+
+#bird1{position: absolute;
+       top:20px;
+        left:50px;
+        opacity:0;filter: alpha(opacity=0);
+        transform: rotateY(180deg);
+        z-index: 5;
+      }
+#bird1:hover{ opacity:1;filter: alpha(opacity=100);}
+
+#bird2{position: absolute;
+       top:60px;
+        right:10px;
+        opacity:0;filter: alpha(opacity=0);
+      }
+#bird2:hover{ opacity:1;filter: alpha(opacity=100);}
+
+#bird3{position: absolute;
+       top:330px;
+        right:180px;
+        opacity:0;filter: alpha(opacity=0);
+      }
+#bird3:hover{ opacity:1;filter: alpha(opacity=100);}
+
+#bird4{position: absolute;
+       top:30px;
+        left:470px;
+        opacity:0;filter: alpha(opacity=0);
+      }
+#bird4:hover{ opacity:1;filter: alpha(opacity=100);}
+
+#bird5{position: absolute;
+       top:280px;
+        left:510px;
+        opacity:0;filter: alpha(opacity=0);
+      }
+#bird5:hover{ opacity:1;filter: alpha(opacity=100);}
+
+#bird6{position: absolute;
+       top:330px;
+        left:170px;
+        opacity:0;filter: alpha(opacity=0);
+        z-index: 6;
+      }
+#bird6:hover{ opacity:1;filter: alpha(opacity=100);}
+
+
+
+#curtain {  position:absolute;
+           top:450px;
+           right: 10px;
+           z-index:2;
+         }
+
+
+#curtain {  position:absolute;
+           top:450px;
+           right: 10px;
+           z-index:2;
+         }
+
+
+#eye{ position:absolute;
+        top: 100px;
+        right:10%;
+       z-index:1;
+       opacity:0.2;
+
+                         }
+#eyeleft{
+         position:absolute;
+        top: 100px;
+        left:10%;
+        transform: rotateY(180deg);
+       z-index:1;
+     opacity:0.8;
+   }
