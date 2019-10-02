@@ -71,6 +71,16 @@ h2{ font-size:17px;
 
 }
 
+.button {
+  background-color: yellow; /* Green */
+  border: none;
+  padding: 10px 15px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 12px;
+}
+
 a:link {color: green;text-decoration: none;}
 a:visited {color: green; text-decoration: none;}
 a:focus {color: yellow;text-decoration: none;}
