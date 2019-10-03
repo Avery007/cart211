@@ -20,6 +20,10 @@ h2{ font-size:17px;
      font-family:verdana;
      color: #11bf3e;
       text-align:center;
+      text-decoration: overline underline;
+ -webkit-text-decoration-color: yellow; /* Safari */
+ text-decoration-color: yellow;
+  text-decoration-style: solid;
          }
 
 .content{  position:absolute;
