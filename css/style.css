@@ -52,7 +52,7 @@ a:active {color: green; text-decoration: none;}
         border-color : #ADD8F6;
          border-left-style: solid;
 	      border-right-style: solid;
-         z-index:1;
+         z-index:6;
          opacity:0.45;filter: alpha(opacity=45);
 
                             }
