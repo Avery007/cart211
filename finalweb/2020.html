@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>life in 2020</title>
+
+<style>
+
+body {
+
+	overflow:hidden;
+  background-repeat: no-repeat;
+	background-size: 100% 700px;
+
+
+}
+
+
+#yourinfo{position:absolute;
+           left:20px;top:50px;z-index:8;font-size:22px;color:white;}
+
+
+#text{
+	position:fixed;
+	left:25%;
+	top:30%;
+	z-index:7;
+	display:none;
+	background-color: blue;
+	color: yellow;
+	opacity:0.7;
+ font-size: 35px;
+
+
+
+
+}
+#window{
+   position:fixed;
+	 left:0%;
+	 top:0%;
+	 z-index:4;
+	 display:none;
+	 background-color: #202225;
+	 opacity:0.9;
+	 height:700px;
+	 width:1500px;
+
+
+
+}
+
+#robot1{
+	position:absolute;
+	right:10%;
+	top:15%;
+	z-index:6;
+	display:none;
+
+}
+
+#screen1{
+	position:absolute;
+	left: 5%;
+	top: 5%;
+	z-index: 2;
+}
+
+#screen2{
+	position:absolute;
+	left: 10%;
+	top: 60%;
+	z-index: 2;
+}
+#screen3{
+	position:absolute;
+	left: 30%;
+	top: 30%;
+	z-index: 2;
+}
+#screen4{
+	position:absolute;
+	left: 50%;
+	top: 60%;
+	z-index: 2;
+}
+#screen5{
+	position:absolute;
+	right: 0%;
+	top: 70%;
+	z-index: 2;
+}
+
+#screen6{
+	position:absolute;
+	right: 20%;
+	top: 10%;
+	z-index: 2;
+}
+#button{ background-color:#40E0D0;
+
+    color: #00008B;
+     padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    position:absolute;
+    top:480px;
+    left:870px; cursor: pointer;
+      z-index:5;
+    }
+
+#traveler{position:absolute;
+     left:100px;
+       top:300px;
+       z-index:3;}
+
+#school{ position: absolute;
+	        top: 50px;
+	        left: 460px;
+
+
+         opacity:0.8;
+         z-index:5;
+        visibility: hidden;
+
+}
+
+
+#button1{ background-color:yellow;
+           font-size: 15px;
+         padding:10px 10px;
+        position:absolute;
+	left: 830px;
+	top: 200px;
+	z-index: 7;
+       visibility: hidden;
+        cursor: pointer;
+}
+
+#button2{ position:absolute;
+	left: 700px;
+	top: 400px;
+	z-index: 6;
+	visibility: hidden;
+}
+
+
+
+</style>
+
+<script>
+
+function setCookie(cname,cvalue,exdays) {  var d = new Date();
+
+   d.setTime(d.getTime() + (exdays*60*60*1000));
+var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires;
+}
+
+function getCookie(cname) {
+var name = cname + "=";
+
+ var ca = document.cookie.split(';');
+
+ for(var i=0; i<ca.length; i++) {
+ var c = ca[i];
+
+ while (c.charAt(0)==' ') c = c.substring(1);
+
+if (c.indexOf(name) != -1) {
+            return c.substring(name.length, c.length);
+        }
+
+    }    return "";
+}
+
+
+//var a=getCookie("yourseeds");var seedsamount=parseInt(a);
+//var aname=getCookie("yourname");
+//function checkCookie() {
+  // document.getElementById("yourinfo").innerHTML= "Hello "+ aname + ". Your current seeds amount: " + seedsamount;
+
+
+                  //  }
+
+
+var youX = 0;
+var youY = 6;
+
+
+
+
+
+
+
+
+
+
+var text1="Cellphones are the best entertainment!";
+var text2="Cellphones are the best nature";
+var text3="We cannot live without Internet!";
+var text4="Internet provides best education!";
+function screen(object,textContent){
+ document.getElementById(object).style.height="300px";
+ document.getElementById(object).style.width= 500 + "px";
+ document.getElementById("window").style.display= "block";
+ document.getElementById(object).style.zIndex="6";
+ document.getElementById("robot1").style.display="block";
+document.getElementById("text").style.display="block";
+	document.getElementById("text").innerHTML=textContent;
+ typeWriter("text",textContent);
+
+}
+
+function clearScreen(object){
+	document.getElementById(object).style.height="150px";
+	document.getElementById(object).style.width= 250+ "px";
+	document.getElementById("window").style.display= "none";
+	document.getElementById(object).style.zIndex="2";
+	document.getElementById("robot1").style.display="none";
+	document.getElementById("text").style.display="none";
+	document.getElementById("text").innerHTML="";
+
+
+
+
+
+}
+
+	var i = 0;
+
+function typeWriter(textId,texts) {
+
+  if (i < texts.length) {
+    document.getElementById(textId).innerHTML += texts.charAt(i);
+
+    i++;
+
+    setTimeout(typeWriter, 30,textId,texts);
+
+  }
+
+}
+
+
+function playmusic(){ document.getElementById("music").play();}
+
+
+
+</script>
+
+</head>
+
+
+<body onload="checkCookie()";>
+<body onkeypress="keyStuff(event);">
+<body style="background-image:url(images/map2020.png)">
+
+
+<div id="traveler">
+<img src="images/you.png"  width="50" height="100"> </div>
+<div id="window"></div>
+<img id="screen1"  onmouseover="screen('screen1',text1)"  onmouseleave="clearScreen('screen1')" src="images/screen1.jpg" height= "100" width="200">
+<img id="screen2"  onmouseover="screen('screen2',text2)"  onmouseleave="clearScreen('screen2')"src="images/screen2.jpg" height= "100" width="200">
+<img id="screen3"  onmouseover="screen('screen3',text3)"  onmouseleave="clearScreen('screen3')"src="images/screen3.jpg" height= "100" width="200">
+<img id="screen4" onmouseover="screen('screen4',text4)"  onmouseleave="clearScreen('screen4')" src="images/screen4.png" height= "100" width="200">
+<img id="screen5" src="images/screen5.jpg" height= "150" width="250">
+<img id="screen6" src="images/screen6.jpg" height= "150" width="250">
+<div id="robot1"><img src="images/robot.png" height= "200" width="90"> </div>
+<div id="text"></div>
+
+
+
+
+
+
+
+</body>
+</html>

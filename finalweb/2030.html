@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<title>life in 2020</title>
+
+<style>
+
+body {
+
+	overflow:hidden;
+  background-repeat: no-repeat;
+	background-size: 100% 700px;
+
+
+}
+
+
+#yourinfo{position:absolute;
+           left:20px;top:50px;z-index:8;font-size:22px;color:white;}
+
+
+
+
+
+#screen1{
+	position:absolute;
+	left: 5%;
+	top: 5%;
+	z-index: 2;
+}
+
+#screen2{
+	position:absolute;
+	left: 10%;
+	top: 70%;
+	z-index: 2;
+}
+#screen3{
+	position:absolute;
+	left: 30%;
+	top: 30%;
+	z-index: 2;
+}
+#screen4{
+	position:absolute;
+	left: 50%;
+	top: 60%;
+	z-index: 2;
+}
+#screen5{
+	position:absolute;
+	right: 0%;
+	top: 70%;
+	z-index: 2;
+}
+
+#screen6{
+	position:absolute;
+	right: 20%;
+	top: 10%;
+	z-index: 2;
+}
+#button{ background-color:#40E0D0;
+
+    color: #00008B;
+     padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    position:absolute;
+    top:480px;
+    left:870px; cursor: pointer;
+      z-index:5;
+    }
+
+#traveler{position:absolute;
+     left:100px;
+       top:300px;
+       z-index:3;}
+
+#school{ position: absolute;
+	        top: 50px;
+	        left: 460px;
+
+
+         opacity:0.8;
+         z-index:5;
+        visibility: hidden;
+
+}
+
+
+#button1{ background-color:yellow;
+           font-size: 15px;
+         padding:10px 10px;
+        position:absolute;
+	left: 830px;
+	top: 200px;
+	z-index: 7;
+       visibility: hidden;
+        cursor: pointer;
+}
+
+#button2{ position:absolute;
+	left: 700px;
+	top: 400px;
+	z-index: 6;visibility: hidden;
+}
+
+
+
+</style>
+
+<script>
+
+function setCookie(cname,cvalue,exdays) {  var d = new Date();
+
+   d.setTime(d.getTime() + (exdays*60*60*1000));
+var expires = "expires=" + d.toGMTString();
+    document.cookie = cname + "=" + cvalue + ";" + expires;
+}
+
+function getCookie(cname) {
+var name = cname + "=";
+
+ var ca = document.cookie.split(';');
+
+ for(var i=0; i<ca.length; i++) {
+ var c = ca[i];
+
+ while (c.charAt(0)==' ') c = c.substring(1);
+
+if (c.indexOf(name) != -1) {
+            return c.substring(name.length, c.length);
+        }
+
+    }    return "";
+}
+var youX = 0;
+var youY = 6;
+
+
+
+function keyStuff(event) {
+
+   var x = event.charCode || event.keyCode;
+   var y = String.fromCharCode(x);
+
+
+
+   if (x == 97) { // a
+        youX = youX - 6;
+   }
+	 else if (x == 100) { //d
+				youX = youX +6;
+	 }
+
+    else if (x == 119) { // w
+      	youY = youY -6;
+
+   }
+   else if (x == 115) { // s
+				 youY = youY + 6;
+
+
+   }
+     else {  //any other keys pressed:
+       alert("Sorry You are not allowed to move this way!");
+   }
+	 var you=document.getElementById("traveler");
+	 you.style.left = youX + "px";
+	 you.style.top = youY + "px";  // why cannot change global
+
+}  //end of function keyStuff
+</script>
+
+</head>
+
+
+<body onload="checkCookie()";>
+<body onkeypress="keyStuff(event);">
+<body style="background-image:url(images/map2020.png)">
+
+
+<div id="traveler">
+<img src="images/you.png"  width="50" height="100"> </div>
+<div id="screen1">
+	<img src="images/screen1.jpg" height= "150" width="250"> </div>
+	<div id="screen2">
+		<img src="images/screen2.jpg" height= "100" width="200"> </div>
+		<div id="screen3">
+			<img src="images/screen3.jpg" height= "150" width="250"> </div>
+<div id="screen4">
+<img src="images/screen4.png" height= "200" width="350"> </div>
+<div id="screen5">
+	<img src="images/screen5.jpg" height= "150" width="250"> </div>
+	<div id="screen6">
+		<img src="images/screen6.jpg" height= "150" width="250"> </div>
+
+
+
+</body>
+</html>

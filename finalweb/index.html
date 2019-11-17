@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>
+
+</title>
+
+ <style>
+
+body{background-image:url(images/front.png);
+      background-size:100%;
+       background-repeat:no-repeat;
+      }
+
+#button{ background-color:#b4b4b4;
+
+    color: white;
+     padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position:absolute;
+    top:100px;
+    right:5%;
+    cursor: pointer;
+      z-index:2;
+    }
+#text{ position:absolute;
+        top:150px;
+        left:410px;
+        font-size:20px;
+        width:350px;
+         height:300px;
+        text-shadow:1px 1px grey;
+        z-index:4;
+        color:blue;
+         }
+.cc{ position:absolute;
+        top:550px;
+        left:10px;
+        font-size:12px;
+
+
+        z-index:4;
+     }
+
+
+#startgame{
+
+    visibility:hidden;
+    font-size: 20px;
+    position:absolute;
+    top:430px;
+    left:450px;
+  z-index:5;
+    }
+
+.scroll{   position:absolute;
+        top:80px;
+        left:380px;
+
+        opacity:0.6;
+
+
+          }
+#text1{  position:absolute;
+        top:10px;
+        left:420px;
+         opacity:0;
+}
+
+#text2{  position:absolute;
+        top:280px;
+        left:230px;
+           opacity:0;
+}
+
+#text3{  position:absolute;
+        top:150px;
+        left:740px;
+           opacity:0;
+}
+
+#text4{  position:absolute;
+        top:430px;
+        left:180px;
+           opacity:0;
+}
+#text5{  position:absolute;
+        top:430px;
+        right:180px;
+           opacity:0;
+}
+
+
+
+</style>
+
+
+<script>
+var text =  "Welcome to the dreamland! ----------------    You are here for a reason,  but this reason is unknow for you. You are wondering, wondering, wondering..."
+                  + " Unfortunately, nobody can tell you.--------------------------" + " But I know something that you can get the answer from---the Lost Grail. "
+             + " Unfortunately, nobody can tell you where it is. You have to find it by yourself.";
+var i = 0;
+
+
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("text").innerHTML += text.charAt(i);
+
+    i++;
+
+    setTimeout(typeWriter, 30);
+  }
+else{ document.getElementById("startgame").style.visibility = "visible";}
+
+}
+
+
+
+var width=1;
+function bigger(){ if(width<=500) {
+                   width=width+50; document.getElementById("ascroll").style.height = width + "px";
+                    setTimeout(bigger,300);   }
+                 else{typeWriter();}
+         }
+var m=0;var opacity=0;
+var textid="";
+
+function appear(textid){
+if(m<=10){opacity=opacity+ 0.1;document.getElementById(textid).style.opacity = opacity;m++;
+                  setTimeout('appear(textid)', 200);    }
+
+else if(m<=17 && m>10){ opacity=opacity- 0.1;document.getElementById(textid).style.opacity = opacity;m++;
+                  setTimeout('appear(textid)', 200);  }
+}
+
+var check=0;
+function star(){ check++;m=0;opacity=0;if( check==1) {textid="text1";appear(textid);setTimeout(star, 4000);  }
+              else if (check==2) {textid="text2";appear(textid);setTimeout(star, 4000);  }
+            else if (check==3) {textid="text3";appear(textid);setTimeout(star, 5000);  }
+             else if (check==4) {textid="text4";appear(textid);setTimeout(star, 4000);  }
+            else if (check==5) {textid="text5";appear(textid);setTimeout(star, 5000); }
+           else if (check==6) { bigger();}
+
+         }
+
+
+
+</script>
+</head>
+<body onload="star()">
+
+
+
+
+<div id="text">  </div>
+
+<div class="scroll"> <img id="ascroll" src="scroll.png" width="430" height="1"></div>
+<div id="startgame">  <a href="idload.html">Start your journey</a></div>
+<div id="text1"> <img src="indextext1.png" width="320" height="100"></div>
+<div id="text2"> <img src="indextext2.png" width="360" height="100"></div>
+<div id="text3"> <img src="indextext3.png" width="400" height="100"></div>
+<div id="text4"> <img src="indextext4.png" width="300" height="100"></div>
+<div id="text5"> <img src="indextext5.png" width="360" height="100"></div>
+<a href="2020.html"><button id="button" >Start<button></a>
+
+<div class="cc"><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+<img alt="Creative Commons License" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/88x31.png" /></a><br />
+ <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"> Attribution-NonCommercial-ShareAlike 4.0 <br>Creative Commons International License</a>.</div>
+
+</body>
+</html>
