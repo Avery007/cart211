@@ -35,6 +35,24 @@ body {
 
 
 }
+
+#textS6{
+
+	position:fixed;
+	right: 25%;
+	top:20%;
+	z-index:7;
+	display:block;
+	background-color: blue;
+	color: yellow;
+	opacity:0.7;
+ font-size: 25px;
+
+
+
+
+}
+
 #window{
    position:fixed;
 	 left:0%;
@@ -97,6 +115,16 @@ body {
 	top: 10%;
 	z-index: 2;
 }
+
+#cashless{
+	position:absolute;
+	right:50%;
+	top:50%;
+	z-index: 5;
+	display:none;
+
+}
+
 #button{ background-color:#40E0D0;
 
     color: #00008B;
@@ -191,17 +219,11 @@ var youY = 6;
 
 
 
-
-
-
-
-
-
-
 var text1="Cellphones are the best entertainment!";
 var text2="Cellphones are the best nature";
 var text3="We cannot live without Internet!";
 var text4="Internet provides best education!";
+var text6="Welcome to a cashless society! Now cellphones are ready for shopping! ";
 function screen(object,textContent){
  document.getElementById(object).style.height="300px";
  document.getElementById(object).style.width= 500 + "px";
@@ -244,6 +266,35 @@ function typeWriter(textId,texts) {
 
 }
 
+function screen6(){
+var a=10+"deg";
+alert(a);
+document.getElementById("cashless").style.transform = "rotate(a)";
+document.getElementById("window").style.display = "block";
+document.getElementById("cashless").style.display = "block";
+document.getElementById("robot1").style.display="block";
+typeWriter("textS6",text6);
+//rotate();
+}
+
+function clearScreen6(){
+	document.getElementById("window").style.display = "none";
+	document.getElementById("cashless").style.display = "none";
+	document.getElementById("robot1").style.display="none";
+ document.getElementById("textS6").style.display="none";
+
+
+}
+
+function rotate(){
+	setTimeout(screen6,2000);
+
+}
+
+
+
+
+
 
 function playmusic(){ document.getElementById("music").play();}
 
@@ -258,6 +309,12 @@ function playmusic(){ document.getElementById("music").play();}
 <body onkeypress="keyStuff(event);">
 <body style="background-image:url(images/map2020.png)">
 
+	<audio id ="music" autoplay loop>
+	    <source src="2020Sound.wav" type="audio/wav">
+	  Your browser does not support the audio element.
+
+	</audio>
+
 
 <div id="traveler">
 <img src="images/you.png"  width="50" height="100"> </div>
@@ -265,11 +322,13 @@ function playmusic(){ document.getElementById("music").play();}
 <img id="screen1"  onmouseover="screen('screen1',text1)"  onmouseleave="clearScreen('screen1')" src="images/screen1.jpg" height= "100" width="200">
 <img id="screen2"  onmouseover="screen('screen2',text2)"  onmouseleave="clearScreen('screen2')"src="images/screen2.jpg" height= "100" width="200">
 <img id="screen3"  onmouseover="screen('screen3',text3)"  onmouseleave="clearScreen('screen3')"src="images/screen3.jpg" height= "100" width="200">
-<img id="screen4" onmouseover="screen('screen4',text4)"  onmouseleave="clearScreen('screen4')" src="images/screen4.png" height= "100" width="200">
+<img id="screen4"  onmouseover="screen('screen4',text4)"  onmouseleave="clearScreen('screen4')" src="images/screen4.png" height= "100" width="200">
 <img id="screen5" src="images/screen5.jpg" height= "150" width="250">
-<img id="screen6" src="images/screen6.jpg" height= "150" width="250">
+<img id="screen6" onmouseover="screen6()"  src="images/screen6.jpg" height= "150" width="250">
 <div id="robot1"><img src="images/robot.png" height= "200" width="90"> </div>
 <div id="text"></div>
+<div id="textS6"></div>
+<img id="cashless" src="images/cashless.png" height="250" width="400"</div>
 
 
 

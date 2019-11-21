@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>life in 2020</title>
+<title>life in 2030</title>
 
 <style>
 
@@ -16,8 +16,23 @@ body {
 }
 
 
-#yourinfo{position:absolute;
-           left:20px;top:50px;z-index:8;font-size:22px;color:white;}
+#background {
+  position:absolute;
+	top:20px;
+	left:50px;
+	overflow:hidden;
+  background-repeat: no-repeat;
+	width: 100%;
+	height: 600px;
+
+
+}
+
+
+#traveler{position:absolute;
+           left:100px;
+					 top:100px;
+					 z-index:4;}
 
 
 
@@ -75,10 +90,7 @@ body {
       z-index:5;
     }
 
-#traveler{position:absolute;
-     left:100px;
-       top:300px;
-       z-index:3;}
+
 
 #school{ position: absolute;
 	        top: 50px;
@@ -139,7 +151,8 @@ if (c.indexOf(name) != -1) {
     }    return "";
 }
 var youX = 0;
-var youY = 6;
+var youY = 100;
+var direction;
 
 
 
@@ -152,17 +165,21 @@ function keyStuff(event) {
 
    if (x == 97) { // a
         youX = youX - 6;
+					diretion="left";
    }
 	 else if (x == 100) { //d
 				youX = youX +6;
+				diretion="right";
 	 }
 
     else if (x == 119) { // w
       	youY = youY -6;
+				direction="up";
 
    }
    else if (x == 115) { // s
 				 youY = youY + 6;
+				 direction="down";
 
 
    }
@@ -172,8 +189,105 @@ function keyStuff(event) {
 	 var you=document.getElementById("traveler");
 	 you.style.left = youX + "px";
 	 you.style.top = youY + "px";  // why cannot change global
-
+   movement();
 }  //end of function keyStuff
+
+
+var alertSchool="no";
+
+var alertCenter="no";
+var alertLight="no";
+var alertWorkplace="no";
+function movement(){
+
+if(youX>336&&youX<444){
+
+if(youY>455&&youY<540){
+
+	if (alertCenter == "yes") {
+		 // just don't alert
+	} else if (alertCenter == "no") {
+alert("You made it to the spot!");
+alertCenter = "yes";
+}
+
+}
+}
+
+if(youX>230&&youX<384){
+	if(youY>328&&youY<425){
+
+		if (alertSchool== "yes") {
+			 // just don't alert
+		} else if (alertSchool == "no") {
+		alert("You made it to the spot!");
+		alertSchool = "yes";
+
+
+	}
+
+}
+}
+
+if(youX>230&&youX<384){
+	if(youY>328&&youY<425){
+
+		if (alertSchool== "yes") {
+			 // just don't alert
+		} else if (alertSchool == "no") {
+		alert("You made it to the spot!");
+		alertSchool = "yes";
+
+
+	}
+
+}
+}
+if(youX>558&&youX<618){
+	if(youY>466&&youY<520){
+
+		if (alertSchool== "yes") {
+			 // just don't alert
+		} else if (alertSchool == "no") {
+		alert("You made it to the spot!");
+		alertSchool = "yes";
+
+
+	}
+
+}
+}
+
+if(youX>534&&youX<612){
+	if(youY>352&&youY<460){
+
+		if (alertLight== "yes") {
+			 // just don't alert
+		} else if (alertLight == "no") {
+		alert("Light is smart");
+		alertLight = "yes";
+
+
+	}
+
+}
+}
+if(youX>612&&youX<712){
+	if(youY>340&&youY<400){
+
+		if (alertWorkplace== "yes") {
+			 // just don't alert
+		} else if (alertWorkplace == "no") {
+		alert("Light is smart");
+		alertWorkplace = "yes";
+
+
+	}
+
+}
+}
+}
+
 </script>
 
 </head>
@@ -181,23 +295,14 @@ function keyStuff(event) {
 
 <body onload="checkCookie()";>
 <body onkeypress="keyStuff(event);">
-<body style="background-image:url(images/map2020.png)">
+<body style="background-image:url(images/bg.png)">
 
-
+	<div id="background">
+		<img src="images/lot1.png " >
+	</div>
 <div id="traveler">
-<img src="images/you.png"  width="50" height="100"> </div>
-<div id="screen1">
-	<img src="images/screen1.jpg" height= "150" width="250"> </div>
-	<div id="screen2">
-		<img src="images/screen2.jpg" height= "100" width="200"> </div>
-		<div id="screen3">
-			<img src="images/screen3.jpg" height= "150" width="250"> </div>
-<div id="screen4">
-<img src="images/screen4.png" height= "200" width="350"> </div>
-<div id="screen5">
-	<img src="images/screen5.jpg" height= "150" width="250"> </div>
-	<div id="screen6">
-		<img src="images/screen6.jpg" height= "150" width="250"> </div>
+		<img src="images/you.png " width="50" height="100">
+</div>
 
 
 
