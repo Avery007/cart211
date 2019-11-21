@@ -113,7 +113,7 @@ body {
 	position:absolute;
 	right: 20%;
 	top: 10%;
-	z-index: 2;
+	z-index: 6;
 }
 
 #cashless{
@@ -216,7 +216,7 @@ if (c.indexOf(name) != -1) {
 
 var youX = 0;
 var youY = 6;
-
+var rotation=10;
 
 
 var text1="Cellphones are the best entertainment!";
@@ -231,7 +231,7 @@ function screen(object,textContent){
  document.getElementById(object).style.zIndex="6";
  document.getElementById("robot1").style.display="block";
 document.getElementById("text").style.display="block";
-	document.getElementById("text").innerHTML=textContent;
+
  typeWriter("text",textContent);
 
 }
@@ -244,7 +244,7 @@ function clearScreen(object){
 	document.getElementById("robot1").style.display="none";
 	document.getElementById("text").style.display="none";
 	document.getElementById("text").innerHTML="";
-
+  i=0;
 
 
 
@@ -266,13 +266,21 @@ function typeWriter(textId,texts) {
 
 }
 
+function rotate(){
+
+	document.getElementById("cashless").style.transform = "rotate("+rotation+"deg)";
+    rotation=rotation+10;
+}
+
 function screen6(){
-var a=10+"deg";
-alert(a);
-document.getElementById("cashless").style.transform = "rotate(a)";
+
+
+	//document.getElementById("cashless").style.transform = "rotate(10deg)";
+
 document.getElementById("window").style.display = "block";
 document.getElementById("cashless").style.display = "block";
 document.getElementById("robot1").style.display="block";
+setInterval(rotate,30);
 typeWriter("textS6",text6);
 //rotate();
 }
@@ -282,14 +290,11 @@ function clearScreen6(){
 	document.getElementById("cashless").style.display = "none";
 	document.getElementById("robot1").style.display="none";
  document.getElementById("textS6").style.display="none";
+ i=0;
 
 
 }
 
-function rotate(){
-	setTimeout(screen6,2000);
-
-}
 
 
 
@@ -324,7 +329,7 @@ function playmusic(){ document.getElementById("music").play();}
 <img id="screen3"  onmouseover="screen('screen3',text3)"  onmouseleave="clearScreen('screen3')"src="images/screen3.jpg" height= "100" width="200">
 <img id="screen4"  onmouseover="screen('screen4',text4)"  onmouseleave="clearScreen('screen4')" src="images/screen4.png" height= "100" width="200">
 <img id="screen5" src="images/screen5.jpg" height= "150" width="250">
-<img id="screen6" onmouseover="screen6()"  src="images/screen6.jpg" height= "150" width="250">
+<img id="screen6" onmouseover="screen6()"  onmouseleave="clearScreen6()" src="images/screen6.jpg" height= "150" width="250">
 <div id="robot1"><img src="images/robot.png" height= "200" width="90"> </div>
 <div id="text"></div>
 <div id="textS6"></div>

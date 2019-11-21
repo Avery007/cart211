@@ -128,10 +128,10 @@ function inputname() {
   while (id != "yes" && id!="no"  ){
              var id = prompt("Sorry you must make a choice"); }
 
-
+setCookie("digitalId",id , 10);
          }
 
-setCookie("digitalId",id , 1);
+
 
 function change(){ setTimeout( "finishloading()",3000);
                     setTimeout( "info()",3000);                     }
