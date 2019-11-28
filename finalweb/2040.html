@@ -2,396 +2,415 @@
 <html lang="en">
 
 <head>
-<meta charset="UTF-8">
-<title>
+  <meta charset="UTF-8">
+  <title>
 
-</title>
+  </title>
 
- <style>
-
-body{background-image:url(images/front.png);
-     background-size:100% 600px;
-       background-repeat:no-repeat;
-      }
-
-      #window {
-    			position: fixed;
-    			left: 0%;
-    			top: 0%;
-    			z-index: 4;
-    			display: none;
-    			background-color: #202225;
-    			opacity: 0.9;
-    			height: 700px;
-    			width: 1500px;
-
-
-
-    		}
-
-.buttonStyle{ background-color:yellow;
-
-    color: blue;
-     padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-
-    cursor: pointer;
-    z-index:2;
+  <style>
+    body {
+      background-image: url(images/front.png);
+      background-size: 100% 600px;
+      background-repeat: no-repeat;
     }
 
-#button1{  position:absolute;
-  top:370px;
-  left:1%;}
-
-#button2{  position:absolute;
-    top:350px;
-    left:370px;}
-
-#button3{  position:absolute;
-        top:500px;
-        left:200px;}
-
-#button4{  position:absolute;
-                top:480px;
-                left:620px;}
+    #window {
+      position: fixed;
+      left: 0%;
+      top: 0%;
+      z-index: 4;
+      display: none;
+      background-color: #202225;
+      opacity: 0.9;
+      height: 700px;
+      width: 1500px;
 
 
 
-#button5{  position:absolute;
-                    top:430px;
-                    right:100px;}
+    }
+
+    .buttonStyle {
+      background-color: yellow;
+
+      color: blue;
+      padding: 10px 10px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+
+      cursor: pointer;
+      z-index: 2;
+    }
+
+    #button1 {
+      position: absolute;
+      top: 370px;
+      left: 1%;
+    }
+
+    #button2 {
+      position: absolute;
+      top: 350px;
+      left: 370px;
+    }
+
+    #button3 {
+      position: absolute;
+      top: 500px;
+      left: 200px;
+    }
+
+    #button4 {
+      position: absolute;
+      top: 480px;
+      left: 620px;
+    }
 
 
-#button6{  position:absolute;
-           top:130px;
-           right:150px;
-         }
 
-#button7{  position:absolute;
-                top:70px;
-                left:100px;
+    #button5 {
+      position: absolute;
+      top: 430px;
+      right: 100px;
+    }
 
+
+    #button6 {
+      position: absolute;
+      top: 130px;
+      right: 150px;
+    }
+
+    #button7 {
+      position: absolute;
+      top: 70px;
+      left: 100px;
+
+    }
+
+
+    #button8 {
+      position: absolute;
+      top: 140px;
+      right: 150px;
+      display: none;
+      z-index: 6;
+
+    }
+
+    #text {
+      position: absolute;
+      top: 350px;
+      right: 50px;
+      font-size: 25px;
+      width: 350px;
+      height: 300px;
+      text-shadow: 1px 1px grey;
+      z-index: 5;
+      color: yellow;
+      display: none;
+    }
+
+
+
+
+
+    #foods {
+      position: absolute;
+      top: 150px;
+      left: 140px;
+      display: none;
+      z-index: 5;
+    }
+
+    #shop {
+      position: absolute;
+      top: 50px;
+      left: 150px;
+      display: none;
+      z-index: 5;
+
+
+    }
+
+    #show {
+      position: absolute;
+      top: 50px;
+      left: 150px;
+      display: none;
+      z-index: 5;
+
+
+    }
+
+    #metro {
+      position: absolute;
+      top: 50px;
+      left: 150px;
+      display: none;
+      z-index: 5;
+
+
+    }
+
+    #film {
+      position: absolute;
+      top: 50px;
+      left: 150px;
+      display: none;
+      z-index: 5;
+
+
+    }
+
+    #hospital {
+      position: absolute;
+      top: 50px;
+      left: 150px;
+      display: none;
+      z-index: 5;
+
+
+    }
+
+
+    #training {
+      position: absolute;
+      top: 150px;
+      left: 560px;
+      display: none;
+      z-index: 5;
+
+
+    }
+
+
+    #eye {
+      position: absolute;
+      top: 150px;
+      left: 70px;
+      display: none;
+      z-index: 5;
+
+    }
+
+
+
+    #goahead {
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      z-index: 6;
+
+    }
+
+    #goback {
+      position: absolute;
+      right: 100px;
+      top: 10px;
+      z-index: 6;
+
+    }
+  </style>
+
+
+  <script>
+    function setCookie(cname, cvalue, exdays) {
+      var d = new Date();
+
+      d.setTime(d.getTime() + (exdays * 60 * 60 * 1000));
+      var expires = "expires=" + d.toGMTString();
+      document.cookie = cname + "=" + cvalue + ";" + expires;
+    }
+
+
+    function getCookie(cname) {
+      var name = cname + "=";
+
+      var ca = document.cookie.split(';');
+
+      for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+
+        while (c.charAt(0) == ' ') c = c.substring(1);
+
+        if (c.indexOf(name) != -1) {
+          return c.substring(name.length, c.length);
         }
 
+      }
+      return "";
+    }
 
-#button8{  position:absolute;
-           top:140px;
-           right:150px;
-           display:none;
-           z-index: 6;
+    function message() {
+      alert("Welcome to this digital world! Your experience depends on your digital ID!");
 
-                }
 
-#text{ position:absolute;
-        top:350px;
-        right:50px;
-        font-size:25px;
-        width:350px;
-         height:300px;
-        text-shadow:1px 1px grey;
-        z-index:5;
-        color:yellow;
-        display: none;
-         }
+    }
 
+    function checkFood() {
 
+      var id = getCookie("digitalId");
 
+      if (id == "yes") {
+        document.getElementById("foods").style.display = "block";
+        document.getElementById("window").style.display = "block";
+        document.getElementById("text").style.display = "block";
+        document.getElementById("text").innerHTML = "Hello, our AI system will check your eating history and automatically provide you the most suitable foods!";
+        document.getElementById("button8").style.display = "block";
+      } else {
+        alert("Sorry! You need a legal ID to pay for your foods");
+      }
 
+    }
 
-#foods{  position:absolute;
-        top:150px;
-        left:140px;
-        display:none;
-        z-index: 5;
-}
+    function shop() {
 
-#shop{
-  position:absolute;
-         top:50px;
-         left:150px;
-         display:none;
-         z-index: 5;
-
-
-}
-
-#show{
-  position:absolute;
-         top:50px;
-         left:150px;
-         display:none;
-         z-index: 5;
-
-
-}
-
-#metro{
-  position:absolute;
-         top:50px;
-         left:150px;
-         display:none;
-         z-index: 5;
-
-
-}
-#film{
-  position:absolute;
-         top:50px;
-         left:150px;
-         display:none;
-         z-index: 5;
-
-
-}
-
-#hospital{
-  position:absolute;
-         top:50px;
-         left:150px;
-         display:none;
-         z-index: 5;
-
-
-}
-
-
-#training{
-  position:absolute;
-         top:150px;
-         left:560px;
-         display:none;
-         z-index: 5;
-
-
-}
-
-
-#eye{
-  position:absolute;
-         top:150px;
-         left:70px;
-         display:none;
-         z-index: 5;
-
-}
-
-
-
-#goahead {
-     position: absolute;
-     right: 10px;
-     top: 10px;
-     z-index: 6;
-
-}
-
-#goback{
-     position: absolute;
-     right: 100px;
-     top: 10px;
-     z-index: 6;
-
-}
-
-</style>
-
-
-<script>
-function setCookie(cname,cvalue,exdays) {  var d = new Date();
-
- d.setTime(d.getTime() + (exdays*60*60*1000));    var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires;
-}
-
-
-function getCookie(cname) {
-var name = cname + "=";
-
- var ca = document.cookie.split(';');
-
- for(var i=0; i<ca.length; i++) {
- var c = ca[i];
-
- while (c.charAt(0)==' ') c = c.substring(1);
-
-if (c.indexOf(name) != -1) {
-            return c.substring(name.length, c.length);
-        }
-
-    }    return "";
-}
-
-
-
-function checkFood() {
-  var id=getCookie("digitalId");
-
-  if (id=="yes"){
-    document.getElementById("foods").style.display = "block";
-    document.getElementById("window").style.display = "block";
-    document.getElementById("text").style.display = "block";
-    document.getElementById("text").innerHTML = "Hello, our AI system will check your eating history and automatically provide you the most suitable foods!";
-    document.getElementById("button8").style.display = "block";
-  }
-
-  else{alert("Sorry! You need a legal ID to pay for your foods");}
-
-                    }
-
-function shop() {
-
-  var id=getCookie("digitalId");
-  if (id=="yes"){
-  document.getElementById("shop").style.display = "block";
-  document.getElementById("window").style.display = "block";
-  document.getElementById("text").innerHTML = "Welcome! shopping is easy with Internet!And our AI system will provide feedback based on your shopping records";
-  document.getElementById("text").style.display = "block";
-  document.getElementById("button8").style.display = "block";
-
-                      }
-
-else{alert("Sorry! You cannot go shopping without an ID");}
-
-
-
-                                        }
-
-
-function metro() {
-
-  var id=getCookie("digitalId");
-  if (id=="yes"){
-    document.getElementById("metro").style.display = "block";
-    document.getElementById("window").style.display = "block";
-    document.getElementById("text").innerHTML = "Hey! You can watch videos while waiting for a train!";
-    document.getElementById("text").style.display = "block";
-    document.getElementById("button8").style.display = "block";
-    // setTimeout('alert("  document.getElementById("window").style.display = "block";)', 3000);
-                                                              }
-
-  else{alert("Sorry! Without a digital ID, you cannot buy a digital ticket");}
-
-                                                                                }
-
-function film() {
-
-var id=getCookie("digitalId");
-if (id=="yes"){
-   document.getElementById("film").style.display = "block";
-   document.getElementById("window").style.display = "block";
-   document.getElementById("text").innerHTML = " With RV technology, you get vivid movie experience while statying at home!";
-   document.getElementById("button8").style.display = "block";
-      document.getElementById("text").style.display = "block";                                                                                                                                        }
-else{alert("Sorry! Without a digital ID, You cannot experience our Virtual Movie");}
-
-}
-
-function show() {
-
-var id=getCookie("digitalId");
-if (id=="yes"){
-   document.getElementById("show").style.display = "block";
-   document.getElementById("window").style.display = "block";
-   document.getElementById("text").innerHTML = " Robots are the best actors!";
-   document.getElementById("button8").style.display = "block";
-    document.getElementById("text").style.display = "block";                                                                                                                                                                            }
-else{alert("Sorry! We need to check your digital ID before your entry");}
-
-}
-
-
-function training() {
-
-var id=getCookie("digitalId");
-if (id=="yes"){
-   document.getElementById("training").style.display = "block";
-    document.getElementById("eye").style.display = "block";
-   document.getElementById("window").style.display = "block";
-   document.getElementById("text").style.display = "block";
-   document.getElementById("text").innerHTML = "Learning is so easy as long as you are connected to the computer! Upload the information into your brain!";
-   document.getElementById("button8").style.display = "block";
-                                                                                                                                              }
-else{alert("Sorry! How can you access the training without a digital ID?");}
-
-}
-
-function hospital() {
-
-var id=getCookie("digitalId");
-if (id=="yes"){
-   document.getElementById("hospital").style.display = "block";
-   document.getElementById("window").style.display = "block";
-   document.getElementById("text").style.display = "block";
-   document.getElementById("text").innerHTML = " With our latest scanning technology, EVERYTHING inside you is etremely clear! ";
-   document.getElementById("button8").style.display = "block";
-                                                                                                                                              }
-else{alert("Sorry! We need your digital ID before we help you as we will put your data in the database ");}
-
-}
-
-function clearObject() {
-
-  document.getElementById("window").style.display = "none";
-  document.getElementById("shop").style.display = "none";
-  document.getElementById("text").innerHTML = "";
-  document.getElementById("text").style.display = "none";
-document.getElementById("film").style.display = "none";
-document.getElementById("show").style.display = "none";
-document.getElementById("foods").style.display = "none";
-document.getElementById("metro").style.display = "none";
-document.getElementById("hospital").style.display = "none";
-document.getElementById("training").style.display = "none";
-document.getElementById("button8").style.display = "none";
-document.getElementById("eye").style.display = "none";
-}
-
-function typeWriter() {
-  if (i < text.length) {
-    document.getElementById("text").innerHTML += text.charAt(i);
-
-    i++;
-
-    setTimeout(typeWriter, 30);
-  }
-else{ document.getElementById("startgame").style.visibility = "visible";}
-
-}
-
-
-</script>
+      var id = getCookie("digitalId");
+      if (id == "yes") {
+        document.getElementById("shop").style.display = "block";
+        document.getElementById("window").style.display = "block";
+        document.getElementById("text").innerHTML = "Welcome! shopping is easy with Internet!And our AI system will provide feedback based on your shopping records";
+        document.getElementById("text").style.display = "block";
+        document.getElementById("button8").style.display = "block";
+
+      } else {
+        alert("Sorry! You cannot go shopping without an ID");
+      }
+
+
+
+    }
+
+
+    function metro() {
+
+      var id = getCookie("digitalId");
+      if (id == "yes") {
+        document.getElementById("metro").style.display = "block";
+        document.getElementById("window").style.display = "block";
+        document.getElementById("text").innerHTML = "Hey! You can watch videos while waiting for a train!";
+        document.getElementById("text").style.display = "block";
+        document.getElementById("button8").style.display = "block";
+        // setTimeout('alert("  document.getElementById("window").style.display = "block";)', 3000);
+      } else {
+        alert("Sorry! Without a digital ID, you cannot buy a digital ticket");
+      }
+
+    }
+
+    function film() {
+
+      var id = getCookie("digitalId");
+      if (id == "yes") {
+        document.getElementById("film").style.display = "block";
+        document.getElementById("window").style.display = "block";
+        document.getElementById("text").innerHTML = " With RV technology, you get vivid movie experience while staying at home!";
+        document.getElementById("button8").style.display = "block";
+        document.getElementById("text").style.display = "block";
+      } else {
+        alert("Sorry! Without a digital ID, You cannot experience our Virtual Movie");
+      }
+
+    }
+
+    function show() {
+
+      var id = getCookie("digitalId");
+      if (id == "yes") {
+        document.getElementById("show").style.display = "block";
+        document.getElementById("window").style.display = "block";
+        document.getElementById("text").innerHTML = " Robots are the best actors!";
+        document.getElementById("button8").style.display = "block";
+        document.getElementById("text").style.display = "block";
+      } else {
+        alert("Sorry! We need to check your digital ID before your entry");
+      }
+
+    }
+
+
+    function training() {
+
+      var id = getCookie("digitalId");
+      if (id == "yes") {
+        document.getElementById("training").style.display = "block";
+        document.getElementById("eye").style.display = "block";
+        document.getElementById("window").style.display = "block";
+        document.getElementById("text").style.display = "block";
+        document.getElementById("text").innerHTML = "Learning is so easy as long as you are connected to the computer! Upload the information into your brain!";
+        document.getElementById("button8").style.display = "block";
+      } else {
+        alert("Sorry! How can you access the training without a digital ID?");
+      }
+
+    }
+
+    function hospital() {
+
+      var id = getCookie("digitalId");
+      if (id == "yes") {
+        document.getElementById("hospital").style.display = "block";
+        document.getElementById("window").style.display = "block";
+        document.getElementById("text").style.display = "block";
+        document.getElementById("text").innerHTML = " With our latest scanning technology, EVERYTHING inside you is etremely clear! ";
+        document.getElementById("button8").style.display = "block";
+      } else {
+        alert("Sorry! We need your digital ID before we help you as we will put your data in the database ");
+      }
+
+    }
+
+    function clearObject() {
+
+      document.getElementById("window").style.display = "none";
+      document.getElementById("shop").style.display = "none";
+      document.getElementById("text").innerHTML = "";
+      document.getElementById("text").style.display = "none";
+      document.getElementById("film").style.display = "none";
+      document.getElementById("show").style.display = "none";
+      document.getElementById("foods").style.display = "none";
+      document.getElementById("metro").style.display = "none";
+      document.getElementById("hospital").style.display = "none";
+      document.getElementById("training").style.display = "none";
+      document.getElementById("button8").style.display = "none";
+      document.getElementById("eye").style.display = "none";
+    }
+  </script>
 </head>
 
-<body style="background-image:url(images/2040.png)">
+<body onload="message();">
+
+  <body style="background-image:url(images/2040.png)">
 
 
-<button id="button1" class="buttonStyle" onclick="shop()"> Enter</button>
-<button id="button2" class="buttonStyle" onclick="show()"> Enter</button>
-<button id="button3" class="buttonStyle"  onclick="metro()" > Enter</button>
-<button id="button4" class="buttonStyle"  onclick="checkFood()"> Enter</button>
-<button id="button5" class="buttonStyle"  onclick="film()"> Enter</button>
-<button id="button6" class="buttonStyle"  onclick="hospital()"> Enter</button>
-<button id="button7" class="buttonStyle"  onclick="training()"> Enter</button>
-<button id="button8" class="buttonStyle"  onclick="clearObject()"> I get it !</button>
+    <button id="button1" class="buttonStyle" onclick="shop()"> Enter</button>
+    <button id="button2" class="buttonStyle" onclick="show()"> Enter</button>
+    <button id="button3" class="buttonStyle" onclick="metro()"> Enter</button>
+    <button id="button4" class="buttonStyle" onclick="checkFood()"> Enter</button>
+    <button id="button5" class="buttonStyle" onclick="film()"> Enter</button>
+    <button id="button6" class="buttonStyle" onclick="hospital()"> Enter</button>
+    <button id="button7" class="buttonStyle" onclick="training()"> Enter</button>
+    <button id="button8" class="buttonStyle" onclick="clearObject()"> I get it !</button>
 
 
-<img id="foods"  src="images/giphy.gif" height="300"  width="800">
-<img id="shop"  src="images/shop.gif" height="500"  width="500">
-<img id="metro"  src="images/metro.gif" height="500"  width="500">
-<img id="film"  src="images/film.gif" height="500"  width="500">
-<img id="show"  src="images/robot.gif" height="500"  width="500">
-<img id="hospital"  src="images/hospital.gif" height="500"  width="500">
-<img id="training"  src="images/learning.gif" height="300"  width="300">
-<img id="eye"  src="images/eye.gif" height="300"  width="400">
-<div id="window" ></div>
-<div id="text"></div>
+    <img id="foods" src="images/giphy.gif" height="300" width="800">
+    <img id="shop" src="images/shop.gif" height="500" width="500">
+    <img id="metro" src="images/metro.gif" height="500" width="500">
+    <img id="film" src="images/film.gif" height="500" width="500">
+    <img id="show" src="images/robot.gif" height="500" width="500">
+    <img id="hospital" src="images/hospital.gif" height="500" width="500">
+    <img id="training" src="images/learning.gif" height="300" width="300">
+    <img id="eye" src="images/eye.gif" height="300" width="400">
+    <div id="window"></div>
+    <div id="text"></div>
 
-<div id="goahead"> <a href="final.html">
- <img src="images/goahead.png" alt="link" width="100" height="50"></a></div>
- <div id="goback"> <a href="idload.html">
-  <img src="images/goback.png" alt="link" width="100" height="50"></a></div>
+    <div id="goahead"> <a href="final.html">
+        <img src="images/goahead.png" alt="link" width="100" height="50"></a></div>
+    <div id="goback"> <a href="idload.html">
+        <img src="images/goback.png" alt="link" width="100" height="50"></a></div>
 
-</body>
+  </body>
+
 </html>
