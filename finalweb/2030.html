@@ -1,310 +1,503 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta http-equiv="content-type" content="text/html; charset=utf-8" />
-<title>life in 2030</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>life in 2030</title>
 
-<style>
+	<style>
 
-body {
+		body {
 
-	overflow:hidden;
-  background-repeat: no-repeat;
-	background-size: 100% 700px;
-
-
-}
+			overflow: hidden;
+			background-repeat: no-repeat;
+			background-size: 100% 700px;
 
 
-#background {
-  position:absolute;
-	top:20px;
-	left:50px;
-	overflow:hidden;
-  background-repeat: no-repeat;
-	width: 100%;
-	height: 600px;
+		}
 
 
-}
+		#background {
+			position: absolute;
+			top: 20px;
+			left: 50px;
+			overflow: hidden;
+			background-repeat: no-repeat;
+			width: 100%;
+			height: 600px;
 
 
-#traveler{position:absolute;
-           left:100px;
-					 top:100px;
-					 z-index:4;}
+		}
 
 
-
-
-
-#screen1{
-	position:absolute;
-	left: 5%;
-	top: 5%;
-	z-index: 2;
-}
-
-#screen2{
-	position:absolute;
-	left: 10%;
-	top: 70%;
-	z-index: 2;
-}
-#screen3{
-	position:absolute;
-	left: 30%;
-	top: 30%;
-	z-index: 2;
-}
-#screen4{
-	position:absolute;
-	left: 50%;
-	top: 60%;
-	z-index: 2;
-}
-#screen5{
-	position:absolute;
-	right: 0%;
-	top: 70%;
-	z-index: 2;
-}
-
-#screen6{
-	position:absolute;
-	right: 20%;
-	top: 10%;
-	z-index: 2;
-}
-#button{ background-color:#40E0D0;
-
-    color: #00008B;
-     padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    position:absolute;
-    top:480px;
-    left:870px; cursor: pointer;
-      z-index:5;
-    }
+		#traveler {
+			position: absolute;
+			left: 100px;
+			top: 100px;
+			z-index: 4;
+			display: block;
+		}
 
 
 
-#school{ position: absolute;
-	        top: 50px;
-	        left: 460px;
 
-
-         opacity:0.8;
-         z-index:5;
-        visibility: hidden;
-
-}
-
-
-#button1{ background-color:yellow;
-           font-size: 15px;
-         padding:10px 10px;
-        position:absolute;
-	left: 830px;
-	top: 200px;
-	z-index: 7;
-       visibility: hidden;
-        cursor: pointer;
-}
-
-#button2{ position:absolute;
-	left: 700px;
-	top: 400px;
-	z-index: 6;visibility: hidden;
-}
+		#hands {
+			position: absolute;
+			left: 50px;
+			top: 50px;
+			z-index: 5;
+			display: none;
+			height: 500;
+			width: 900;
 
 
 
-</style>
+		}
 
-<script>
+		#chip {
+			position: absolute;
+			top: 310px;
+			left: 150px;
+			z-index: 6;
+			opacity: 0.6;
+			display: none;
 
-function setCookie(cname,cvalue,exdays) {  var d = new Date();
+		}
 
-   d.setTime(d.getTime() + (exdays*60*60*1000));
-var expires = "expires=" + d.toGMTString();
-    document.cookie = cname + "=" + cvalue + ";" + expires;
-}
+		#chip0 {
+			position: absolute;
+			top: 310px;
+			left: 640px;
+			z-index: 6;
+			opacity: 0.6;
+			display: none;
 
-function getCookie(cname) {
-var name = cname + "=";
+		}
 
- var ca = document.cookie.split(';');
-
- for(var i=0; i<ca.length; i++) {
- var c = ca[i];
-
- while (c.charAt(0)==' ') c = c.substring(1);
-
-if (c.indexOf(name) != -1) {
-            return c.substring(name.length, c.length);
-        }
-
-    }    return "";
-}
-var youX = 0;
-var youY = 100;
-var direction;
+		#fan {
+			position: absolute;
+			top: 50px;
+			left: 400px;
+			z-index: 6;
+			display: none;
 
 
 
-function keyStuff(event) {
 
-   var x = event.charCode || event.keyCode;
-   var y = String.fromCharCode(x);
+		}
+
+   #ai{
+
+		 position: absolute;
+	 	top: 50px;
+	 	left: 100px;
+	 	z-index: 6;
+	 	display: none;
 
 
 
-   if (x == 97) { // a
-        youX = youX - 6;
-					diretion="left";
-   }
-	 else if (x == 100) { //d
-				youX = youX +6;
-				diretion="right";
+
 	 }
+	 .buttonStyle{ background-color:yellow;
 
-    else if (x == 119) { // w
-      	youY = youY -6;
-				direction="up";
+ 	    color: blue;
+ 	     padding: 10px 10px;
+ 	    text-align: center;
+ 	    text-decoration: none;
+ 	    display: none;
+ 	    font-size: 16px;
+
+ 	    cursor: pointer;
+ 	      z-index:7;
+ 	    }
+ 	#button1{  position:absolute;
+ 	  right:150px;
+ 	  top:400px;}
+
+ 	#button2{  position:absolute;
+ 	    top:300px;
+ 	    left:670px;}
+ 	#button3{  position:absolute;
+ 	        top:500px;
+ 	        left:25%;}
+
+ 	#button4{  position:absolute;
+ 	                top:450px;
+ 	                left:35%;}
+
+	#window {
+			position: fixed;
+			left: 0%;
+			top: 0%;
+			z-index: 4;
+			display: none;
+			background-color: #202225;
+			opacity: 0.9;
+			height: 700px;
+			width: 1500px;
+
+
+
+		}
+
+
+		#data{
+
+		position: absolute;
+		 top: 150px;
+		 left: 200px;
+		 z-index: 6;
+		 display: none;
+
+
+ 	}
+
+	#id{
+	 position: absolute;
+	 top: 150px;
+	 right: 100px;
+	 z-index:6;
+	 display: none;
+
 
    }
-   else if (x == 115) { // s
-				 youY = youY + 6;
-				 direction="down";
 
 
-   }
-     else {  //any other keys pressed:
-       alert("Sorry You are not allowed to move this way!");
-   }
-	 var you=document.getElementById("traveler");
-	 you.style.left = youX + "px";
-	 you.style.top = youY + "px";  // why cannot change global
-   movement();
-}  //end of function keyStuff
+   #timeline {
+ 				position: absolute;
+ 				right: 10px;
+ 				top: 400px;
+ 				z-index: 6;
+
+ 	}
+
+	</style>
+
+	<script>
+
+		var youX = 0;
+		var youY = 100;
+		var direction;
 
 
-var alertSchool="no";
 
-var alertCenter="no";
-var alertLight="no";
-var alertWorkplace="no";
-function movement(){
+		function keyStuff(event) {
 
-if(youX>336&&youX<444){
+			var x = event.charCode || event.keyCode;
+			var y = String.fromCharCode(x);
 
-if(youY>455&&youY<540){
 
-	if (alertCenter == "yes") {
-		 // just don't alert
-	} else if (alertCenter == "no") {
-alert("You made it to the spot!");
-alertCenter = "yes";
-}
 
-}
-}
+			if (x == 97) { // a
+				youX = youX - 6;
 
-if(youX>230&&youX<384){
-	if(youY>328&&youY<425){
+			} else if (x == 100) { //d
+				youX = youX + 6;
 
-		if (alertSchool== "yes") {
-			 // just don't alert
-		} else if (alertSchool == "no") {
-		alert("You made it to the spot!");
-		alertSchool = "yes";
+			} else if (x == 119) { // w
+				youY = youY - 6;
+
+
+			} else if (x == 115) { // s
+				youY = youY + 6;
+
+
+
+			} else { //any other keys pressed:
+				alert("Sorry You are not allowed to move this way!");
+			}
+			var you = document.getElementById("traveler");
+			you.style.left = youX + "px";
+			you.style.top = youY + "px"; // why cannot change global
+			movement();
+		} //end of function keyStuff
+
+
+		var alertSchool = "no";
+
+		var alertCenter = "no";
+		var alertLight = "no";
+		var alertBank="no";
+		var alertWorkplace = "no";
+		var alertRobot="no";
+    var alertImplants = "no"; // must be global
+		var alertId="no";
+		var alertVR="no";
+		var alertPlay="no";
+
+		function movement() {
+
+			if (youX > 336 && youX < 444) {
+
+				if (youY > 455 && youY < 540) {
+
+					if (alertCenter == "yes") {
+						// just don't alert
+					} else if (alertCenter == "no") {
+					document.getElementById("data").style.display= "block";
+				  setTimeout(function(){ 	document.getElementById("data").style.display= "none"; }, 7000);
+						alertCenter = "yes";
+					}
+
+				}
+			}
+
+			if (youX > 230 && youX < 384) {
+				if (youY > 328 && youY < 425) {
+
+					if (alertSchool == "yes") {
+						// just don't alert
+					} else if (alertSchool == "no") {
+						alert("welcome to school!");
+						alertSchool = "yes";
+
+
+					}
+
+				}
+			}
+
+
+			if (youX > 558 && youX < 618) {
+				if (youY > 466 && youY < 520) {
+
+					if (alertBank == "yes") {
+						// just don't alert
+					} else if (alertBank == "no") {
+						alert("what");
+						alertBank = "yes";
+
+
+					}
+
+				}
+			}
+
+			if (youX > 534 && youX < 612) {
+				if (youY > 352 && youY < 460) {
+
+					if (alertLight == "yes") {
+						// just don't alert
+					} else if (alertLight == "no") {
+						alert("Light is smart");
+						alertLight = "yes";
+
+
+					}
+
+				}
+			}
+			if (youX > 612 && youX < 720) {
+				if (youY > 270 && youY < 400) {
+
+					if (alertWorkplace == "yes") {
+						// just don't alert
+					} else if (alertWorkplace == "no") {
+						alert("better efficiency");
+						alertWorkplace = "yes";
+
+
+					}
+
+				}
+			}
+
+			if (youX > 750 && youX < 800) {
+				if (youY > 105 && youY < 145) {
+
+					if (alertRobot == "yes") {
+						// just don't alert
+					} else if (alertRobot == "no") {
+					document.getElementById("ai").style.display= "block";
+	         document.getElementById("button2").style.display= "block";
+				 alertRobot = "yes";
+
+
+					}
+
+				}
+			}
+
+
+			if (youX > 905 && youX < 950) {
+				if (youY > 10 && youY < 82) {
+
+					if (alertImplants == "yes") {
+						// just don't alert
+
+					} else if (alertImplants == "no") {
+
+						interaction();
+						alertImplants = "yes";
+
+
+					}
+
+				}
+			}
+
+			if (youX > 876 && youX < 978) {
+
+				if (youY > 142 && youY < 200) {
+
+					if (alertId == "yes") {
+						// just don't alert
+					} else if (alertId == "no") {
+					document.getElementById("id").style.display= "block";
+					setTimeout(function(){ 	document.getElementById("id").style.display= "none"; }, 7000);
+						alertId = "yes";
+					}
+
+				}
+			}
+			if (youX > 1038 && youX < 1100) {
+				if (youY > 64 && youY < 100) {
+
+					if (alertVR == "yes") {
+						// just don't alert
+
+					} else if (alertVR == "no") {
+
+						alert("virtual world is the heaven!");
+						alertVR = "yes";
+
+
+					}
+
+				}
+			}
+
+			if (youX > 570 && youX < 680) {
+				if (youY > 64 && youY < 150) {
+
+					if (alertPlay == "yes") {
+						// just don't alert
+
+					} else if (alertPlay == "no") {
+
+						alert("Entertainment is the heaven!");
+						alertPlay = "yes";
+
+
+					}
+
+				}
+			}
+		}
+
+
+		var rotation = 10;
+		var direction;
+		var s = 0;
+		var t = 0
+
+		function rotating() {
+
+			if (direction == "right") {
+				document.getElementById("fan").style.transform = "rotate(" + rotation + "deg)";
+				t = t + 10;
+				rotation = rotation + 10;
+
+			} else if (direction == "left") {
+
+				if (s < 10) {
+
+					rotation = rotation + 10 - s;
+					document.getElementById("fan").style.transform = "rotate(" + rotation + "deg)";
+				} else {
+					rotation = 10;
+					t = 0;
+					clearInterval(state);
+				}
+				console.log(rotation);
+
+
+			}
+		}
+
+		var state;
+
+		function startRotate() {
+			direction = "right";
+			t = t + 10;
+			s = 0;
+			state = setInterval(rotating, 300);
+
+
+		}
+
+		function stopRotate() {
+			direction = "left";
+			s = s + 1;
+			setInterval(rotating, 300);
+
+
+		}
+
+		function interaction() {
+
+			document.getElementById("window").style.display = "block";
+			document.getElementById("hands").style.display = "block";
+			document.getElementById("chip").style.display = "block";
+			document.getElementById("chip0").style.display = "block";
+			document.getElementById("fan").style.display = "block";
+			document.getElementById("button1").style.display = "block";
+		}
+
+		function closeAll() {
+
+			document.getElementById("window").style.display = "none";
+			document.getElementById("hands").style.display = "none";
+			document.getElementById("chip").style.display = "none";
+			document.getElementById("chip0").style.display = "none";
+			document.getElementById("fan").style.display = "none";
+			document.getElementById("button1").style.display = "none";
+		}
+
+  function closeAI(){
+
+	document.getElementById("ai").style.display = "none";
+document.getElementById("button2").style.display = "none";
 
 
 	}
 
-}
-}
 
-if(youX>230&&youX<384){
-	if(youY>328&&youY<425){
-
-		if (alertSchool== "yes") {
-			 // just don't alert
-		} else if (alertSchool == "no") {
-		alert("You made it to the spot!");
-		alertSchool = "yes";
-
-
-	}
-
-}
-}
-if(youX>558&&youX<618){
-	if(youY>466&&youY<520){
-
-		if (alertSchool== "yes") {
-			 // just don't alert
-		} else if (alertSchool == "no") {
-		alert("You made it to the spot!");
-		alertSchool = "yes";
-
-
-	}
-
-}
-}
-
-if(youX>534&&youX<612){
-	if(youY>352&&youY<460){
-
-		if (alertLight== "yes") {
-			 // just don't alert
-		} else if (alertLight == "no") {
-		alert("Light is smart");
-		alertLight = "yes";
-
-
-	}
-
-}
-}
-if(youX>612&&youX<712){
-	if(youY>340&&youY<400){
-
-		if (alertWorkplace== "yes") {
-			 // just don't alert
-		} else if (alertWorkplace == "no") {
-		alert("Light is smart");
-		alertWorkplace = "yes";
-
-
-	}
-
-}
-}
-}
-
-</script>
+	</script>
 
 </head>
 
 
-<body onload="checkCookie()";>
-<body onkeypress="keyStuff(event);">
-<body style="background-image:url(images/bg.png)">
 
-	<div id="background">
-		<img src="images/lot1.png " >
-	</div>
-<div id="traveler">
-		<img src="images/you.png " width="50" height="100">
-</div>
+	<body onkeypress="keyStuff(event);">
+
+		<body style="background-image:url(images/bg.png)">
+
+			<div id="background">
+				<img src="images/lot1.png ">
+			</div>
+			<div id="traveler">
+				<img src="images/you.png " width="50" height="100">
+			</div>
 
 
+			<img id="hands" src="images/hands.png" height="500" width="800">
+			<img id="chip" class="humanMachine" onmouseover="startRotate()" src="images/chip.png" height="100" width="100">
+			<img id="chip0" class="humanMachine" onmouseover="stopRotate()" src="images/chip.png" height="100" width="100">
+			<img id="fan" src="images/fan.png" height="200" width="200">
 
-</body>
+			<div id="window"></div>
+			<button id="button1" class="buttonStyle" onclick="closeAll()"> Exit </button>
+
+			<button id="button2" class="buttonStyle" onclick="closeAI()"> Okey I see </button>
+			<img id="ai" src="images/ai0.png" height="500" width="900">
+     <img id="data" src="images/data.png" height="400" width="600">
+		    <img id="id" src="images/id.png" height="400" width="600">
+
+
+				<div id="timeline"> <a href="idload.html">
+				 <img src="images/goahead.png" alt="link" width="100" height="50"></a></div>
+
+		</body>
+
 </html>

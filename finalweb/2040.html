@@ -13,6 +13,22 @@ body{background-image:url(images/front.png);
      background-size:100% 600px;
        background-repeat:no-repeat;
       }
+
+      #window {
+    			position: fixed;
+    			left: 0%;
+    			top: 0%;
+    			z-index: 4;
+    			display: none;
+    			background-color: #202225;
+    			opacity: 0.9;
+    			height: 700px;
+    			width: 1500px;
+
+
+
+    		}
+
 .buttonStyle{ background-color:yellow;
 
     color: blue;
@@ -23,97 +39,162 @@ body{background-image:url(images/front.png);
     font-size: 16px;
 
     cursor: pointer;
-      z-index:6;
+    z-index:2;
     }
+
 #button1{  position:absolute;
-  top:400px;
-  left:5%;}
+  top:370px;
+  left:1%;}
 
 #button2{  position:absolute;
-    top:400px;
-    left:15%;}
+    top:350px;
+    left:370px;}
+
 #button3{  position:absolute;
         top:500px;
-        left:25%;}
+        left:200px;}
 
 #button4{  position:absolute;
-                top:450px;
-                left:35%;}
-#button4{  position:absolute;
-          top:450px;
-          left:45%;}
+                top:480px;
+                left:620px;}
+
+
 
 #button5{  position:absolute;
-                    top:450px;
-                    right:15%;}
+                    top:430px;
+                    right:100px;}
+
+
+#button6{  position:absolute;
+           top:130px;
+           right:150px;
+         }
+
+#button7{  position:absolute;
+                top:70px;
+                left:100px;
+
+        }
+
+
+#button8{  position:absolute;
+           top:140px;
+           right:150px;
+           display:none;
+           z-index: 6;
+
+                }
+
 #text{ position:absolute;
-        top:150px;
-        left:410px;
-        font-size:20px;
+        top:350px;
+        right:50px;
+        font-size:25px;
         width:350px;
          height:300px;
         text-shadow:1px 1px grey;
-        z-index:4;
-        color:blue;
+        z-index:5;
+        color:yellow;
+        display: none;
          }
-.cc{ position:absolute;
-        top:550px;
-        left:10px;
-        font-size:12px;
 
 
-        z-index:4;
-     }
 
 
-#startgame{
 
-    visibility:hidden;
-    font-size: 20px;
-    position:absolute;
-    top:430px;
-    left:450px;
-  z-index:5;
-    }
-
-.scroll{   position:absolute;
-        top:80px;
-        left:380px;
-
-        opacity:0.6;
-
-
-          }
-#text1{  position:absolute;
-        top:10px;
-        left:420px;
-         opacity:0;
-}
-
-#text2{  position:absolute;
-        top:280px;
-        left:230px;
-           opacity:0;
-}
-
-#text3{  position:absolute;
+#foods{  position:absolute;
         top:150px;
-        left:740px;
-           opacity:0;
+        left:140px;
+        display:none;
+        z-index: 5;
 }
 
-#text4{  position:absolute;
-        top:430px;
-        left:180px;
-           opacity:0;
+#shop{
+  position:absolute;
+         top:50px;
+         left:150px;
+         display:none;
+         z-index: 5;
+
+
 }
-#text5{  position:absolute;
-        top:430px;
-        right:180px;
-           opacity:0;
+
+#show{
+  position:absolute;
+         top:50px;
+         left:150px;
+         display:none;
+         z-index: 5;
+
+
+}
+
+#metro{
+  position:absolute;
+         top:50px;
+         left:150px;
+         display:none;
+         z-index: 5;
+
+
+}
+#film{
+  position:absolute;
+         top:50px;
+         left:150px;
+         display:none;
+         z-index: 5;
+
+
+}
+
+#hospital{
+  position:absolute;
+         top:50px;
+         left:150px;
+         display:none;
+         z-index: 5;
+
+
 }
 
 
+#training{
+  position:absolute;
+         top:150px;
+         left:560px;
+         display:none;
+         z-index: 5;
+
+
+}
+
+
+#eye{
+  position:absolute;
+         top:150px;
+         left:70px;
+         display:none;
+         z-index: 5;
+
+}
+
+
+
+#goahead {
+     position: absolute;
+     right: 10px;
+     top: 10px;
+     z-index: 6;
+
+}
+
+#goback{
+     position: absolute;
+     right: 100px;
+     top: 10px;
+     z-index: 6;
+
+}
 
 </style>
 
@@ -145,15 +226,127 @@ if (c.indexOf(name) != -1) {
 
 
 
-function checkCookie() {
+function checkFood() {
   var id=getCookie("digitalId");
+
   if (id=="yes"){
-    alert("welcome!");
+    document.getElementById("foods").style.display = "block";
+    document.getElementById("window").style.display = "block";
+    document.getElementById("text").style.display = "block";
+    document.getElementById("text").innerHTML = "Enjoy your food!";
+    document.getElementById("button8").style.display = "block";
   }
 
-  else{alert("sorry you dont have a legal id for this");}
+  else{alert("Sorry! You dont have a legal ID for this");}
 
                     }
+
+function shop() {
+
+  var id=getCookie("digitalId");
+  if (id=="yes"){
+  document.getElementById("shop").style.display = "block";
+  document.getElementById("window").style.display = "block";
+  document.getElementById("text").innerHTML = "Welcome! shopping is easy with Internet!";
+  document.getElementById("text").style.display = "block";
+  document.getElementById("button8").style.display = "block";
+
+                      }
+
+else{alert("Sorry! You dont have a legal ID for shopping");}
+
+
+
+                                        }
+
+
+function metro() {
+
+  var id=getCookie("digitalId");
+  if (id=="yes"){
+    document.getElementById("metro").style.display = "block";
+    document.getElementById("window").style.display = "block";
+    document.getElementById("text").innerHTML = "Hey! You can watch videos while waiting for a train!";
+    document.getElementById("text").style.display = "block";
+    document.getElementById("button8").style.display = "block";
+    // setTimeout('alert("  document.getElementById("window").style.display = "block";)', 3000);
+                                                              }
+
+  else{alert("Sorry! You dont have a legal ID for this");}
+
+                                                                                }
+
+function film() {
+
+var id=getCookie("digitalId");
+if (id=="yes"){
+   document.getElementById("film").style.display = "block";
+   document.getElementById("window").style.display = "block";
+   document.getElementById("text").innerHTML = " With RV technology, you get vivid movie experience while statying at home!";
+   document.getElementById("button8").style.display = "block";
+      document.getElementById("text").style.display = "block";                                                                                                                                        }
+else{alert("Sorry! You dont have a legal ID for this");}
+
+}
+
+function show() {
+
+var id=getCookie("digitalId");
+if (id=="yes"){
+   document.getElementById("show").style.display = "block";
+   document.getElementById("window").style.display = "block";
+   document.getElementById("text").innerHTML = " The robot show is always the best!";
+   document.getElementById("button8").style.display = "block";
+    document.getElementById("text").style.display = "block";                                                                                                                                                                            }
+else{alert("Sorry! You dont have a legal ID for this");}
+
+}
+
+
+function training() {
+
+var id=getCookie("digitalId");
+if (id=="yes"){
+   document.getElementById("training").style.display = "block";
+    document.getElementById("eye").style.display = "block";
+   document.getElementById("window").style.display = "block";
+   document.getElementById("text").style.display = "block";
+   document.getElementById("text").innerHTML = "Learning is so easy as long as you upload the information into your brain!";
+   document.getElementById("button8").style.display = "block";
+                                                                                                                                              }
+else{alert("Sorry! You dont have a legal ID for this");}
+
+}
+
+function hospital() {
+
+var id=getCookie("digitalId");
+if (id=="yes"){
+   document.getElementById("hospital").style.display = "block";
+   document.getElementById("window").style.display = "block";
+   document.getElementById("text").style.display = "block";
+   document.getElementById("text").innerHTML = " With our latest technology, everything inside you is etremely clear! ";
+   document.getElementById("button8").style.display = "block";
+                                                                                                                                              }
+else{alert("Sorry! You dont have a legal ID for this");}
+
+}
+
+function clearObject() {
+
+  document.getElementById("window").style.display = "none";
+  document.getElementById("shop").style.display = "none";
+  document.getElementById("text").innerHTML = "";
+  document.getElementById("text").style.display = "none";
+document.getElementById("film").style.display = "none";
+document.getElementById("show").style.display = "none";
+document.getElementById("foods").style.display = "none";
+document.getElementById("metro").style.display = "none";
+document.getElementById("hospital").style.display = "none";
+document.getElementById("training").style.display = "none";
+document.getElementById("button8").style.display = "none";
+document.getElementById("eye").style.display = "none";
+}
 
 function typeWriter() {
   if (i < text.length) {
@@ -168,30 +361,37 @@ else{ document.getElementById("startgame").style.visibility = "visible";}
 }
 
 
-
-
-
-
 </script>
 </head>
 
 <body style="background-image:url(images/2040.png)">
 
 
+<button id="button1" class="buttonStyle" onclick="shop()"> Enter</button>
+<button id="button2" class="buttonStyle" onclick="show()"> Enter</button>
+<button id="button3" class="buttonStyle"  onclick="metro()" > Enter</button>
+<button id="button4" class="buttonStyle"  onclick="checkFood()"> Enter</button>
+<button id="button5" class="buttonStyle"  onclick="film()"> Enter</button>
+<button id="button6" class="buttonStyle"  onclick="hospital()"> Enter</button>
+<button id="button7" class="buttonStyle"  onclick="training()"> Enter</button>
+<button id="button8" class="buttonStyle"  onclick="clearObject()"> I get it !</button>
 
 
+<img id="foods"  src="images/giphy.gif" height="300"  width="800">
+<img id="shop"  src="images/shop.gif" height="500"  width="500">
+<img id="metro"  src="images/metro.gif" height="500"  width="500">
+<img id="film"  src="images/film.gif" height="500"  width="500">
+<img id="show"  src="images/robot.gif" height="500"  width="500">
+<img id="hospital"  src="images/hospital.gif" height="500"  width="500">
+<img id="training"  src="images/learning.gif" height="300"  width="300">
+<img id="eye"  src="images/eye.gif" height="300"  width="400">
+<div id="window" ></div>
+<div id="text"></div>
 
-<div  onclick="checkCookie()" >
-<button id="button1" class="buttonStyle"> Enter</button>
-<button id="button2" class="buttonStyle"> Enter</button>
-<button id="button3" class="buttonStyle"> Enter</button>
-<button id="button4" class="buttonStyle"> Enter</button>
-<button id="button5" class="buttonStyle"> Enter</button>
-<button id="button6" class="buttonStyle"> Enter</button>
-</div>
-
-
-
+<div id="goahead"> <a href="final.html">
+ <img src="images/goahead.png" alt="link" width="100" height="50"></a></div>
+ <div id="goback"> <a href="idload.html">
+  <img src="images/goback.png" alt="link" width="100" height="50"></a></div>
 
 </body>
 </html>

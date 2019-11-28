@@ -9,12 +9,12 @@ Get your Id
 
  <style>
 
-body{background-image:url(labyrith4.png);
+body{
       background-size:100%;
-       background-repeat:no-repeat;
+       background-color:blue;
       }
 #text1{ position: absolute;
-	        top: 150px;
+	        top: 300px;
 	        left: 30%;
            background-color: blue;
            font-size: 60px;
@@ -30,7 +30,7 @@ body{background-image:url(labyrith4.png);
 
 #text2{ position: absolute;
 	        top: 280px;
-	        left: 20%;
+	        right: 100px;
            background-color: blue;
            font-size: 40px;
            height:170px;
@@ -57,10 +57,33 @@ body{background-image:url(labyrith4.png);
     display: inline-block;
     font-size: 28px;
     position:absolute;
-    top:170px;
-    left:56%; cursor: pointer;
+    top:100px;
+    right:100px;
+    cursor: pointer;
     opacity:0.8;
+    z-index:3;
 }
+
+
+
+  #background {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 600px;
+
+
+  }
+
+
+
+
+
+
+
 </style>
 <script>
 
@@ -105,7 +128,7 @@ function info(){ document.getElementById("text2").innerHTML = " Your initial see
            "." + comment();}
 
 function inputname() {
-    var id = prompt("Your choice? Type 'yes' or 'no'");
+    var id = prompt("Do you accept a digital ID inside your arm ? Type 'yes' or 'no'");
 
 
 
@@ -113,7 +136,7 @@ function inputname() {
      if (id == "yes" ) {
 
         document.getElementById("text2").innerHTML =
-        "Congraduation! with an Id your journey will be much easier! ";
+        "Congratulation! with an digital Id your journey will be much easier! ";
        setTimeout('window.location.replace("2040.html")',4500);
                                                              }
 
@@ -142,8 +165,8 @@ function change(){ setTimeout( "finishloading()",3000);
  <body onload= "change()">
 <div id="text1"> Your identity is loading......</div>
 <div id="text2">Wait for a while... </div>
-<button class="button"  button onclick="inputname()"> To continue, add your name</button></div>
-
+<button class="button"  button onclick="inputname()"> To continue, add your choice</button></div>
+<img id="background" src="images/selection.png" >
 
 
 

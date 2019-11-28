@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+<meta charset="UTF-8">
+<title>
+
+</title>
+
+ <style>
+
+body{background-image:url(images/matrix.png);
+      background-size:100%;
+       background-repeat:no-repeat;
+      }
+
+#button{ background-color:#b4b4b4;
+
+    color: white;
+     padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    position:absolute;
+    top:100px;
+    right:5%;
+    cursor: pointer;
+      z-index:2;
+    }
+
+#text{ position:absolute;
+        top:150px;
+        left:500px;
+        font-size:25px;
+        width:400px;
+         height:500px;
+
+        z-index:4;
+        color:blue;
+         }
+
+
+#startgame{
+
+    visibility:hidden;
+    font-size: 20px;
+    position:absolute;
+    top:430px;
+    left:450px;
+    z-index:5;
+    }
+
+
+#text1{  position:absolute;
+        top:10px;
+        left:420px;
+         opacity:0;
+}
+
+
+
+
+</style>
+
+
+<script>
+var text =  "Welcome to the Brave New World !\n" + "This is a world without any pain,any sadness,any sorrow...\n" +
+             "Because our masters are in control of everything.\n" + " Technologies are our best weapon\n"+
+             "You might not know us,\n" + "but we know everything about you.\n"+
+             "You might not know our great plan,\n" + "and you will get used to it.\n"+
+             "You are losing everything,\n" + "when you are enjoying everything.\n";
+
+
+var i = 0;
+
+
+function typeWriter() {
+  if (i < text.length) {
+    document.getElementById("text").innerHTML += text.charAt(i);
+
+    i++;
+
+    setTimeout(typeWriter, 50);
+  }
+else{ document.getElementById("startgame").style.visibility = "visible";}
+
+}
+
+
+
+
+
+
+
+</script>
+</head>
+<body onload="typeWriter()">
+
+
+
+
+<div id="text">  </div>
+
+
+<div id="startgame">  <a href="idload.html">Start your journey</a></div>
+
+
+
+
+</body>
+</html>
