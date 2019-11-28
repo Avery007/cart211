@@ -14,20 +14,34 @@ body{background-image:url(images/matrix.png);
        background-repeat:no-repeat;
       }
 
-#button{ background-color:#b4b4b4;
 
-    color: white;
-     padding: 10px 10px;
+.buttonStyle{
+
+    background-color:yellow;
+    color: blue;
+    padding: 10px 10px;
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-    position:absolute;
-    top:100px;
-    right:5%;
     cursor: pointer;
-      z-index:2;
-    }
+    z-index:2;
+
+          }
+
+#button1{  position:absolute;
+        top:300px;
+        right:50px;
+      }
+
+#button2{  position:absolute;
+          top:350px;
+          right:50px;}
+
+#button3{  position:absolute;
+              top:400px;
+              right:50px;}
+
 
 #text{ position:absolute;
         top:150px;
@@ -38,33 +52,16 @@ body{background-image:url(images/matrix.png);
 
         z-index:4;
         color:blue;
+
          }
-
-
-#startgame{
-
-    visibility:hidden;
-    font-size: 20px;
-    position:absolute;
-    top:430px;
-    left:450px;
-    z-index:5;
-    }
-
-
-#text1{  position:absolute;
-        top:10px;
-        left:420px;
-         opacity:0;
-}
-
-
 
 
 </style>
 
 
 <script>
+
+
 var text =  "Welcome to the Brave New World !\n" + "This is a world without any pain,any sadness,any sorrow...\n" +
              "Because our masters are in control of everything.\n" + " Technologies are our best weapon\n"+
              "You might not know us,\n" + "but we know everything about you.\n"+
@@ -90,20 +87,18 @@ else{ document.getElementById("startgame").style.visibility = "visible";}
 
 
 
-
-
-
 </script>
 </head>
 <body onload="typeWriter()">
 
 
-
-
 <div id="text">  </div>
 
 
-<div id="startgame">  <a href="idload.html">Start your journey</a></div>
+<button id="button1" class="buttonStyle"> <a href="2020.html"> Back 2020</a></button>
+<button id="button2" class="buttonStyle"> <a href="2030.html">Back 2030</a></button>
+<button id="button3" class="buttonStyle"> <a href="2040.html">Back 2040</a></button>
+
 
 
 
